@@ -1,0 +1,12 @@
+prepare:
+  steps: []
+test:
+  steps: []
+run:
+  steps:
+    - command: echo $FOO
+    - command: echo $CS_REPLICA
+    - command: hostname
+    - command: mkdir -p $CS_REPLICA
+    - command: echo Hello $CS_REPLICA > $CS_REPLICA/index.html
+    - command: npx serve $CS_REPLICA
